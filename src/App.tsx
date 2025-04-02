@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import githubLogo from './assets/images/icons8-github-100.png';
+import lupa from './assets/images/Vector.png';
+import campoUsuario from './components/campoUsuario';
 
-function App() {
-  const [count, setCount] = useState(0)
+interface usuarioType{
+  nome: string;
+  foto?: string;
+  descricao?: string;
+}
+
+const App = () => {
+  
+  const [pesquisa, setPesquisa] = useState("")
+
+  const atualizarPesquisa = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPesquisa(event.target.value);
+  };
+  
+  function pesquisarUsuario(){
+    if(pesquisa === ""){
+      alert("Campo de pesquisa Vazio")
+      return console.log("Campo de pesquisa Vazio")
+    }
+    
+    return console.log("Sucesso")
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main>
+      <div className='container'>
+        <img src={githubLogo} alt="" />
+        <h1>Perfil</h1>
+      <h1>GITHUB</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className='campoPesquisa'>
+        <input value={pesquisa} onChange={atualizarPesquisa} type="text" placeholder='Digite o nome do usuário' />
+        <button onClick={pesquisarUsuario}><img src={lupa} className='lupa' /></button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
+    </main>
   )
 }
 
