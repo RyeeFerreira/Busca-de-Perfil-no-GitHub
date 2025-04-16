@@ -1,0 +1,38 @@
+.campoUsuario{
+    background-color: rgb(214, 208, 208);
+    width: 60%;
+    height: 45%;
+    margin-top: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+
+.foto{
+    width: 170px;
+    height: 170px;
+    border: 2px solid #065cdd;
+    border-radius: 100px;
+    margin: 20px;
+}
+
+.info{
+    margin: 0 0 50px 0;
+    }
+
+.nome{
+    margin: 0 0 10px 0;
+    color: #065cdd;
+    font-size: 16px;
+    
+}
+
+.descricao{
+    margin: 0;
+    display: flex;
+    align-items: start;
+    justify-content: start ;
+    font-size: 12px;
+}
