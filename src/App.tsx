@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import './App.css';
 import githubLogo from './assets/images/icons8-github-100.png';
 import github from './assets/images/github-white-logo-d748.svg';
